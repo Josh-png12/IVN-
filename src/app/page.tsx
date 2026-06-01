@@ -16,9 +16,9 @@ export default function HomePage() {
       {/* Quiénes somos preview */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Texto — entra desde la izquierda */}
-            <RevealSection direction="left">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+            {/* Texto — primero en DOM, segundo en móvil */}
+            <RevealSection direction="left" className="order-2 md:order-1">
               <div>
                 <span className="section-tag mb-4 block">Nuestra comunidad</span>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-ivn-text mb-6 leading-tight">
@@ -44,8 +44,8 @@ export default function HomePage() {
               </div>
             </RevealSection>
 
-            {/* Imagen — entra desde la derecha */}
-            <RevealSection direction="right">
+            {/* Imagen — primera en móvil */}
+            <RevealSection direction="right" className="order-1 md:order-2">
               <div className="relative">
                 <div className="aspect-[4/3] bg-gradient-to-br from-ivn-purple-light to-ivn-purple-glow rounded-2xl flex flex-col items-center justify-center gap-4 border border-ivn-purple/20">
                   <div className="w-20 h-20 bg-ivn-purple/10 rounded-full flex items-center justify-center">

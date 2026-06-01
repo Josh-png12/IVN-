@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, Radio } from 'lucide-react'
+import { Menu, X, Radio, ChevronRight } from 'lucide-react'
 
 const links = [
   { label: 'Inicio', href: '/' },
@@ -98,35 +98,34 @@ export default function Navbar() {
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+      </nav>
 
-        {/* Mobile menu */}
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            open ? 'max-h-96 opacity-100 pb-4' : 'max-h-0 opacity-0'
-          }`}
-        >
-          <div className="flex flex-col gap-1 pt-2 border-t border-ivn-gray">
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden bg-white border-t border-ivn-purple-light shadow-lg animate-[slideDown_0.2s_ease-out]">
+          <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="font-body text-ivn-text hover:text-ivn-purple hover:bg-ivn-purple-light px-4 py-3 rounded-lg transition-colors duration-200 text-sm font-medium"
+                className="flex items-center justify-between py-3 px-4 rounded-xl font-body text-gray-700 hover:bg-ivn-purple-light hover:text-ivn-purple transition-colors duration-200"
               >
                 {link.label}
+                <ChevronRight className="w-4 h-4 opacity-40" />
               </Link>
             ))}
             <Link
               href="/en-vivo"
               onClick={() => setOpen(false)}
-              className="flex items-center gap-2 bg-ivn-magenta text-white px-4 py-3 rounded-lg text-sm font-semibold mt-2"
+              className="mt-2 flex items-center justify-center gap-2 bg-ivn-magenta text-white py-3 px-4 rounded-xl font-body font-medium"
             >
               <Radio size={15} />
               En Vivo
             </Link>
           </div>
         </div>
-      </nav>
+      )}
     </header>
   )
 }

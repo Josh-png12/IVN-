@@ -12,7 +12,7 @@ export default function EnVivoPage() {
   return (
     <>
       {/* ── Hero "Próximamente" ───────────────────────────── */}
-      <section className="min-h-[90vh] flex flex-col items-center justify-center bg-gradient-to-br from-ivn-purple-dark via-ivn-purple to-purple-600 relative overflow-hidden px-4 text-center">
+      <section className="min-h-[100svh] flex flex-col items-center justify-center bg-gradient-to-br from-ivn-purple-dark via-ivn-purple to-purple-600 relative overflow-hidden px-4 text-center">
 
         {/* Orbes */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -41,7 +41,7 @@ export default function EnVivoPage() {
           <Radio className="w-14 h-14 text-white" />
         </div>
 
-        <h1 className="relative z-10 font-display text-5xl md:text-7xl font-bold text-white mb-4">
+        <h1 className="relative z-10 font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
           Transmisión en vivo
         </h1>
 

@@ -15,7 +15,7 @@ const fadeUp = {
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-ivn-purple-dark via-ivn-purple to-[#6D28D9]">
+    <section className="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-ivn-purple-dark via-ivn-purple to-[#6D28D9]">
       {/* Dot pattern */}
       <div className="absolute inset-0 pattern-dots opacity-60" />
 
@@ -59,7 +59,7 @@ export default function HeroSection() {
           initial="hidden"
           animate="visible"
           custom={0}
-          className="relative w-40 h-40 md:w-48 md:h-48 mb-8 rounded-full"
+          className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 mb-6 md:mb-8 rounded-full"
           style={{ animation: 'shimmer 3s ease-in-out infinite' }}
         >
           <Image
@@ -77,7 +77,7 @@ export default function HeroSection() {
           initial="hidden"
           animate="visible"
           custom={1}
-          className="font-display text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 leading-tight"
         >
           Una casa para todos
         </motion.h1>
@@ -88,7 +88,7 @@ export default function HeroSection() {
           initial="hidden"
           animate="visible"
           custom={2}
-          className="font-display text-xl md:text-2xl text-ivn-purple-light italic mb-12 max-w-2xl leading-relaxed"
+          className="font-display text-base sm:text-lg md:text-xl text-ivn-purple-light italic mb-10 md:mb-12 max-w-xs sm:max-w-md md:max-w-xl mx-auto leading-relaxed"
         >
           "El vino nuevo en odres nuevos se ha de echar"
         </motion.p>
@@ -99,18 +99,18 @@ export default function HeroSection() {
           initial="hidden"
           animate="visible"
           custom={3}
-          className="flex flex-col sm:flex-row gap-4"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-xs sm:max-w-none sm:w-auto"
         >
           <Link
             href="/quienes-somos"
-            className="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-ivn-purple-dark transition-all duration-200 text-lg"
+            className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold hover:bg-white hover:text-ivn-purple-dark transition-all duration-200 text-base sm:text-lg"
           >
             Conócenos
             <ChevronRight size={20} />
           </Link>
           <Link
             href="/en-vivo"
-            className="inline-flex items-center gap-2 bg-ivn-magenta text-white px-8 py-4 rounded-full font-semibold hover:brightness-110 transition-all duration-200 shadow-lg shadow-ivn-magenta/30 text-lg"
+            className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 bg-ivn-magenta text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold hover:brightness-110 transition-all duration-200 shadow-lg shadow-ivn-magenta/30 text-base sm:text-lg"
           >
             <Radio size={20} />
             Transmisión en vivo

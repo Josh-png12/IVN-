@@ -1,13 +1,22 @@
-import { Eye, Heart, BookOpen } from 'lucide-react'
+import { Eye, Heart, BookOpen, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 import { RevealSection } from '@/components/ui/RevealSection'
 
 function InternalHero({ title, breadcrumb }: { title: string; breadcrumb: string }) {
   return (
-    <section className="bg-gradient-to-br from-ivn-purple-dark to-ivn-purple py-20 px-4">
-      <div className="max-w-7xl mx-auto text-center">
-        <p className="text-ivn-purple-light text-sm uppercase tracking-widest mb-4">{breadcrumb}</p>
-        <h1 className="font-display text-4xl md:text-5xl font-bold text-white">{title}</h1>
-        <div className="w-16 h-1 bg-ivn-magenta rounded-full mx-auto mt-6" />
+    <section className="pt-20 pb-12 md:pt-28 md:pb-16 bg-gradient-to-br from-ivn-purple-dark to-ivn-purple relative overflow-hidden">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <div className="flex items-center justify-center gap-2 mb-4 font-body text-white/50 text-sm">
+          <Link href="/" className="hover:text-white/80 transition-colors">Inicio</Link>
+          <ChevronRight className="w-3.5 h-3.5" />
+          <span className="text-white/80">{title}</span>
+        </div>
+        <h1 className="font-display font-bold text-white text-4xl sm:text-5xl md:text-6xl leading-tight">
+          {title}
+        </h1>
+        <p className="font-body text-white/70 mt-4 text-base sm:text-lg max-w-xl mx-auto">
+          {breadcrumb}
+        </p>
       </div>
     </section>
   )

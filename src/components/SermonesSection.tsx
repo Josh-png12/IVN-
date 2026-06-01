@@ -18,9 +18,9 @@ export default function SermonesSection() {
           subtitle="Alimenta tu espíritu con la Palabra. Escucha nuestros mensajes más recientes."
         />
 
-        <div className="flex flex-nowrap md:grid md:grid-cols-3 gap-6 overflow-x-auto pb-4 md:overflow-visible md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {sermones.map((s, i) => (
-            <RevealSection key={s.titulo} delay={i * 100} className="flex-shrink-0 w-72 md:w-auto">
+            <RevealSection key={s.titulo} delay={i * 100}>
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-ivn-purple/10 transition-all duration-300 group h-full">
                 {/* Thumbnail with zoom on hover */}
                 <div className="relative h-44 overflow-hidden">

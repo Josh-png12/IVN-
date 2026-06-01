@@ -15,6 +15,18 @@
 /* ─── Base ─────────────────────────────────────────────── */
 html { scroll-behavior: smooth; }
 
+@layer base {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 body {
   font-family: var(--font-body);
   color: #1F2937;
@@ -57,6 +69,10 @@ h3 { line-height: 1.3; }
 .input-ivn::placeholder { color: #6B7280; }
 
 /* ─── Entry animations ─────────────────────────────────── */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }

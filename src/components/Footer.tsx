@@ -27,8 +27,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Col 1: Logo + lema */}
           <RevealSection delay={0}>
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3">
+            <div className="flex flex-col gap-4 items-center md:items-start">
+              <div className="flex items-center gap-3 justify-center md:justify-start">
                 <div className="relative w-12 h-12 flex-shrink-0 bg-white/10 rounded-full p-1">
                   <Image src="/logo.png" alt="IVN Logo" fill className="object-contain" />
                 </div>
@@ -49,7 +49,7 @@ export default function Footer() {
 
           {/* Col 2: Links */}
           <RevealSection delay={150}>
-            <div>
+            <div className="text-center md:text-left">
               <h3 className="font-display font-bold text-lg mb-6 text-ivn-purple-light">Páginas</h3>
               <ul className="flex flex-col gap-3">
                 {navLinks.map((link) => (
@@ -68,7 +68,7 @@ export default function Footer() {
 
           {/* Col 3: Horarios + redes */}
           <RevealSection delay={300}>
-            <div>
+            <div className="text-center md:text-left">
               <h3 className="font-display font-bold text-lg mb-6 text-ivn-purple-light">Cultos</h3>
               <ul className="flex flex-col gap-3 mb-8">
                 {horarios.map((h) => (
@@ -81,7 +81,7 @@ export default function Footer() {
                 ))}
               </ul>
               <h3 className="font-display font-bold text-lg mb-4 text-ivn-purple-light">Síguenos</h3>
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center md:justify-start">
                 <a
                   href="https://instagram.com/IVN_Riohacha"
                   target="_blank"

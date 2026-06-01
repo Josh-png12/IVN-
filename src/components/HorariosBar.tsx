@@ -23,11 +23,11 @@ export default function HorariosBar() {
           <div className="w-12 h-1 bg-ivn-purple rounded-full mx-auto mt-3" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
           {horarios.map((h, i) => (
             <RevealSection key={h.dia} delay={i * 100}>
               <div
-                className={`group bg-white rounded-2xl p-6 shadow-sm border-l-4 ${borderColors[i]} flex items-center gap-4 cursor-default transition-all duration-300 hover:-translate-y-2 hover:shadow-lg`}
+                className={`group bg-white rounded-2xl p-5 sm:p-6 shadow-sm border-l-4 ${borderColors[i]} flex items-center gap-4 sm:flex-col sm:items-start sm:gap-3 cursor-default transition-all duration-300 hover:-translate-y-2 hover:shadow-lg`}
               >
                 <div className={`w-12 h-12 ${iconBg[i]} rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110`}>
                   {iconMap[h.icono] ?? <Clock size={24} className="text-ivn-purple" />}

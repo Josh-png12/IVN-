@@ -26,22 +26,22 @@ export default function MinisteriosGrid() {
           subtitle="Cada ministerio es un espacio para encontrarte con Dios y servir a tu comunidad."
         />
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           {ministerios.map((m, i) => (
             <RevealSection key={m.nombre} delay={i * 100}>
-              <div className="group bg-white border border-ivn-gray rounded-2xl p-6 flex flex-col items-center text-center gap-4 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-xl hover:border-ivn-purple/30">
+              <div className="group bg-white border border-ivn-gray rounded-2xl p-4 sm:p-6 flex flex-col items-center text-center gap-3 sm:gap-4 cursor-pointer transition-all duration-300 hover:-translate-y-3 hover:shadow-xl hover:border-ivn-purple/30">
                 <div
-                  className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-125 group-hover:rotate-6 ${
+                  className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-125 group-hover:rotate-6 ${
                     ministerioColors[m.nombre] ?? 'bg-ivn-purple-light text-ivn-purple group-hover:bg-ivn-purple group-hover:text-white'
                   }`}
                 >
                   {iconMap[m.icono]}
                 </div>
                 <div>
-                  <h3 className="font-display font-semibold text-ivn-text text-lg mb-1 transition-colors duration-200 group-hover:text-ivn-purple">
+                  <h3 className="font-display font-semibold text-ivn-text text-base sm:text-lg mb-1 transition-colors duration-200 group-hover:text-ivn-purple">
                     {m.nombre}
                   </h3>
-                  <p className="text-ivn-muted text-sm font-body">{m.descripcion}</p>
+                  <p className="text-ivn-muted text-xs sm:text-sm font-body">{m.descripcion}</p>
                 </div>
               </div>
             </RevealSection>
