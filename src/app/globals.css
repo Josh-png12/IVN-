@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Variables ────────────────────────────────────── */
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+}
+
+/* Explicit overrides so Tailwind font-display/font-body always match */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+
+/* ─── Base ─────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: #1F2937;
+  background-color: #FAFAFA;
+}
+
+/* ─── Typography scale ─────────────────────────────────── */
+h1 { letter-spacing: -0.02em; line-height: 1.1; }
+h2 { letter-spacing: -0.01em; line-height: 1.2; }
+h3 { line-height: 1.3; }
+
+/* ─── Semantic classes ─────────────────────────────────── */
+.verse {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1.5;
+  color: #4C1D95;
+}
+
+.section-tag {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #7C3AED;
+}
+
+/* ─── Form inputs ──────────────────────────────────────── */
+.input-ivn {
+  @apply w-full border border-gray-200 rounded-xl px-4 py-3
+    text-base outline-none
+    focus:border-ivn-purple focus:ring-2 focus:ring-purple-200
+    transition-all duration-200;
+  font-family: var(--font-body);
+  color: #1F2937;
+}
+
+.input-ivn::placeholder { color: #6B7280; }
+
+/* ─── Entry animations ─────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Hero orbs ────────────────────────────────────────── */
+@keyframes float1 {
+  0%,  100% { transform: translate(0, 0) scale(1); }
+  33%        { transform: translate(40px, -30px) scale(1.05); }
+  66%        { transform: translate(-20px, 20px) scale(0.97); }
+}
+@keyframes float2 {
+  0%,  100% { transform: translate(0, 0) scale(1); }
+  50%        { transform: translate(-30px, -40px) scale(1.08); }
+}
+@keyframes float3 {
+  0%,  100% { transform: translate(-50%, -50%) scale(1); }
+  50%        { transform: translate(-50%, -60%) scale(1.1); }
+}
+
+/* ─── Effects ──────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { box-shadow: 0 0 0px rgba(168,85,247,0); }
+  50%  { box-shadow: 0 0 40px rgba(168,85,247,0.4), 0 0 80px rgba(124,58,237,0.2); }
+  100% { box-shadow: 0 0 0px rgba(168,85,247,0); }
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(168,85,247,0.5); }
+  70%  { box-shadow: 0 0 0 12px rgba(168,85,247,0); }
+  100% { box-shadow: 0 0 0 0 rgba(168,85,247,0); }
+}
+@keyframes bounce-scroll {
+  0%,  100% { transform: translateY(0);   opacity: 1; }
+  50%        { transform: translateY(8px); opacity: 0.5; }
+}
+
+/* ─── Tailwind utilities ───────────────────────────────── */
+@layer utilities {
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+}
+
+@layer components {
+  .pattern-dots {
+    background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+/* ─── Accessibility ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
